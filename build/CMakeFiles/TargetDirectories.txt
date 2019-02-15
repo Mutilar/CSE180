@@ -57,3 +57,11 @@
 /home/mutilar/CSE180/build/lab1/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
 /home/mutilar/CSE180/build/lab1/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/mutilar/CSE180/build/lab1/CMakeFiles/drift.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/list_install_components.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/install.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/rebuild_cache.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/edit_cache.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/gotoposition.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/install/strip.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/install/local.dir
+/home/mutilar/CSE180/build/lab2/CMakeFiles/test.dir

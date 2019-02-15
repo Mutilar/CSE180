@@ -568,6 +568,19 @@ drift/fast:
 	$(MAKE) -f lab1/CMakeFiles/drift.dir/build.make lab1/CMakeFiles/drift.dir/build
 .PHONY : drift/fast
 
+#=============================================================================
+# Target rules for targets named gotoposition
+
+# Build rule for target.
+gotoposition: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gotoposition
+.PHONY : gotoposition
+
+# fast build rule for target.
+gotoposition/fast:
+	$(MAKE) -f lab2/CMakeFiles/gotoposition.dir/build.make lab2/CMakeFiles/gotoposition.dir/build
+.PHONY : gotoposition/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -612,6 +625,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... drift"
+	@echo "... gotoposition"
 .PHONY : help
 
 
