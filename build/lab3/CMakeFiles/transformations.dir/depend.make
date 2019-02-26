@@ -87,10 +87,7 @@ lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/FrameGraphRequest.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/FrameGraphResponse.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
-lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/MinMax.h
-lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/QuadWord.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Quaternion.h
-lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Scalar.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Transform.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/LinearMath/Vector3.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/exceptions.h
@@ -99,7 +96,10 @@ lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/time_cache.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/transform_datatypes.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf/transform_listener.h
+lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/MinMax.h
+lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/QuadWord.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/Quaternion.h
+lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/Scalar.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/Vector3.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/buffer_core.h
 lab3/CMakeFiles/transformations.dir/src/transformations.cpp.o: /opt/ros/kinetic/include/tf2/convert.h
