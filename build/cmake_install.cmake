@@ -117,7 +117,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/mutilar/CSE180/build/gtest/cmake_install.cmake")
-  include("/home/mutilar/CSE180/build/lab3/cmake_install.cmake")
+  include("/home/mutilar/CSE180/build/lab5/cmake_install.cmake")
+  include("/home/mutilar/CSE180/build/lab6/cmake_install.cmake")
 
 endif()
 
