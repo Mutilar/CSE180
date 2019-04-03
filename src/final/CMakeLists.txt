@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(lab3)
+project(final)
 find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs tf tf2_msgs tf2)
 
 catkin_package()
