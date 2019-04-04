@@ -31,6 +31,7 @@
 /home/mutilar/CSE180/build/final/CMakeFiles/edit_cache.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/install/local.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/install/strip.dir
+/home/mutilar/CSE180/build/final/CMakeFiles/navigate_map.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/scan_map.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/tf_generate_messages_cpp.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/actionlib_generate_messages_eus.dir

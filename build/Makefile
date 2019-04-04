@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named navigate_map
+
+# Build rule for target.
+navigate_map: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 navigate_map
+.PHONY : navigate_map
+
+# fast build rule for target.
+navigate_map/fast:
+	$(MAKE) -f final/CMakeFiles/navigate_map.dir/build.make final/CMakeFiles/navigate_map.dir/build
+.PHONY : navigate_map/fast
+
+#=============================================================================
 # Target rules for targets named scan_map
 
 # Build rule for target.
@@ -915,6 +928,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... navigate_map"
 	@echo "... scan_map"
 	@echo "... tf_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"

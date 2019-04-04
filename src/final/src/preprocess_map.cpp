@@ -4,6 +4,7 @@
 
 #include <ros/ros.h>
 #include <math.h>
+#include <geometry_msgs/Vector3.h>
 #include <nav_msgs/OccupancyGrid.h>
 #include <nav_msgs/MapMetaData.h> 
 #include <iostream>
@@ -14,24 +15,24 @@ using namespace std;
 /* Stop Spinning on receiving of map */
 bool has_been_preprocessed = false;
 
-/* Map Metadata Constants*/
+/* Map Metadata Constants */
 float meters_per_pixel;
 int width, height;
 
 /* Boolean representation of Occupancy Grid */
 bool** map_matrix;
 
-/* Iterator to brute-force scan for end-caps of barriers*/
+/* Iterator to brute-force scan for end-caps of barriers */
 float** cap_iterator;
 int cap_iterator_width, cap_iterator_height;
 
-/* Bounds for relevant map data [ignoring excessive padding on edges of map]*/
+/* Bounds for relevant map data [ignoring excessive padding on edges of map] */
 int map_x_min, map_x_max, map_y_min, map_y_max;
 
 /* Sets of two, target x, target y for robot to move towards (output of node) */
 vector<float> target_points;
 
-/* Smoothing Matrix of erronous/noisy points*/
+/* Smoothing Matrix of erronous/noisy points */
 void boxFilter();
 
 /* Writing Matrix to file for viewing */
@@ -279,6 +280,8 @@ int main(int argc, char **argv)
 
 	/* Subscribe to Map & Metadata */
 	ros::Subscriber subscribe_map = nh.subscribe("/map", 1000, &getMap);
+
+	ros::Publisher publish_points = nh.advertise<geometry_msgs::Vector3>("/target_points", 1000);
 	
 	/* Requesting Map once */
 	while (has_been_preprocessed == false) {
@@ -286,4 +289,14 @@ int main(int argc, char **argv)
 
 		ros::spinOnce();
 	}
+
+	geometry_msgs::Vector3 pos;
+
+	for (int i = 0; i < target_points.size(); i += 2) { 
+		pos.x = target_points[i];
+		pos.y = target_points[i+1];
+		cout << "SENDING POINT(" << pos.x << ", " << pos.y << ")\n";
+		publish_points.publish(pos);
+	}
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package format="3">
+<package format="2">
   <name>final</name>
   <version>0.0.0</version>
   <description>The final package</description>
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/lab2</url> -->
+  <!-- <url type="website">http://wiki.ros.org/lab7</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -52,7 +52,10 @@
   <build_depend>roscpp</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <exec_depend>roscpp</exec_depend>
-
+  <depend>ros_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>actionlib</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
