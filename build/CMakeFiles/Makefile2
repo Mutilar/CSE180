@@ -246,7 +246,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=1,2,3 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=3,4,5 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -278,7 +278,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=4,5,6,7 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=6,7,8,9 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=8,9 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=10,11 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=10,11 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=12,13 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -458,7 +458,7 @@ final/preinstall:
 final/CMakeFiles/scan_map.dir/all:
 	$(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/depend
 	$(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=14,15 "Built target scan_map"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=16,17 "Built target scan_map"
 .PHONY : final/CMakeFiles/scan_map.dir/all
 
 # Include target in all.
@@ -1199,7 +1199,7 @@ clean: final/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 final/CMakeFiles/preprocess_map.dir/all:
 	$(MAKE) -f final/CMakeFiles/preprocess_map.dir/build.make final/CMakeFiles/preprocess_map.dir/depend
 	$(MAKE) -f final/CMakeFiles/preprocess_map.dir/build.make final/CMakeFiles/preprocess_map.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=12,13 "Built target preprocess_map"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=14,15 "Built target preprocess_map"
 .PHONY : final/CMakeFiles/preprocess_map.dir/all
 
 # Include target in all.
@@ -1962,6 +1962,61 @@ final/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: final/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory lab7
+
+# Convenience name for "all" pass in the directory.
+lab7/all: lab7/CMakeFiles/cleanarea.dir/all
+
+.PHONY : lab7/all
+
+# Convenience name for "clean" pass in the directory.
+lab7/clean: lab7/CMakeFiles/cleanarea.dir/clean
+
+.PHONY : lab7/clean
+
+# Convenience name for "preinstall" pass in the directory.
+lab7/preinstall:
+
+.PHONY : lab7/preinstall
+
+#=============================================================================
+# Target rules for target lab7/CMakeFiles/cleanarea.dir
+
+# All Build rule for target.
+lab7/CMakeFiles/cleanarea.dir/all:
+	$(MAKE) -f lab7/CMakeFiles/cleanarea.dir/build.make lab7/CMakeFiles/cleanarea.dir/depend
+	$(MAKE) -f lab7/CMakeFiles/cleanarea.dir/build.make lab7/CMakeFiles/cleanarea.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mutilar/CSE180/build/CMakeFiles --progress-num=1,2 "Built target cleanarea"
+.PHONY : lab7/CMakeFiles/cleanarea.dir/all
+
+# Include target in all.
+all: lab7/CMakeFiles/cleanarea.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+lab7/CMakeFiles/cleanarea.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mutilar/CSE180/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 lab7/CMakeFiles/cleanarea.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mutilar/CSE180/build/CMakeFiles 0
+.PHONY : lab7/CMakeFiles/cleanarea.dir/rule
+
+# Convenience name for target.
+cleanarea: lab7/CMakeFiles/cleanarea.dir/rule
+
+.PHONY : cleanarea
+
+# clean rule for target.
+lab7/CMakeFiles/cleanarea.dir/clean:
+	$(MAKE) -f lab7/CMakeFiles/cleanarea.dir/build.make lab7/CMakeFiles/cleanarea.dir/clean
+.PHONY : lab7/CMakeFiles/cleanarea.dir/clean
+
+# clean rule for target.
+clean: lab7/CMakeFiles/cleanarea.dir/clean
 
 .PHONY : clean
 

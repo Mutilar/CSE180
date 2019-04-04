@@ -893,6 +893,19 @@ tf2_msgs_generate_messages_py/fast:
 	$(MAKE) -f final/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make final/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
 .PHONY : tf2_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named cleanarea
+
+# Build rule for target.
+cleanarea: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cleanarea
+.PHONY : cleanarea
+
+# fast build rule for target.
+cleanarea/fast:
+	$(MAKE) -f lab7/CMakeFiles/cleanarea.dir/build.make lab7/CMakeFiles/cleanarea.dir/build
+.PHONY : cleanarea/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -962,6 +975,7 @@ help:
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... cleanarea"
 .PHONY : help
 
 
