@@ -1,28 +1,18 @@
 /*
- *  ROBOTICS, CSE 180
+ *  ROBOTICS FINAL, CSE 180, SPRING 2019
  */
 
 #include <ros/ros.h>
 #include <math.h>
-#include <nav_msgs/Odometry.h>
 #include <nav_msgs/OccupancyGrid.h>
 #include <nav_msgs/MapMetaData.h> 
-#include <tf/transform_listener.h>
-#include <tf2_ros/transform_listener.h>
-#include <tf2_msgs/TFMessage.h>
-#include <geometry_msgs/TransformStamped.h>
-#include <geometry_msgs/Twist.h>
-#include <geometry_msgs/Point.h>
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-struct FloodData {
-	int x_total, y_total;
-	int count;
-};
-FloodData flood_data;
+/* Stop Spinning on receiving of map */
+bool has_been_preprocessed = false;
 
 /* Map Metadata Constants*/
 float meters_per_pixel;
@@ -39,20 +29,34 @@ int cap_iterator_width, cap_iterator_height;
 int map_x_min, map_x_max, map_y_min, map_y_max;
 
 /* Sets of two, target x, target y for robot to move towards (output of node) */
-vector<int> target_points;
+vector<float> target_points;
 
-
+/* Smoothing Matrix of erronous/noisy points*/
 void boxFilter();
 
+/* Writing Matrix to file for viewing */
 void plotMatrix();
 
+/* Rotating Iterator Matrix 90 degrees */
 float** rotateIterator(float** input, int w, int h);
 
+/* Recursively flooding to fill rooms, calculate midpoint */
 void floodArea(int x, int y); 
 
+/* Organizing data collected by floodArea() */
+struct FloodData {
+	int x_total, y_total;
+	int count;
+};
+FloodData flood_data;
 
+
+/* On receiving Occupancy Grid... */
 void getMap(const nav_msgs::OccupancyGrid &map)
 {
+	has_been_preprocessed = true;
+	cout << "\nRECEIVED MAP, PREPROCESSING...\n\n\n";
+
 	/* Reading Metadata */
 	meters_per_pixel = map.info.resolution;
 	width = map.info.width;
@@ -97,16 +101,10 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 
 	/* Search for matches against iterator */
 	for (int rotations = 0; rotations < 4; rotations++) {
-		for (int y = 0; y < cap_iterator_height; y++) {
-			for (int x = 0; x < cap_iterator_width; x++) {
-				std::cout << cap_iterator[x][y] << "\t";
-			}
-			std:cout<<"\n";
-		}
-
 		for (int x = map_x_min; x < map_x_max; x++) {
 			for (int y = map_y_min; y < map_y_max; y++) {
 				bool is_match = true;
+				/* Checking if point satisfies condition of Iterator */
 				for (int x_it = 0; x_it < cap_iterator_width && is_match; x_it++) {
 					for (int y_it = 0; y_it < cap_iterator_height && is_match; y_it++) {		
 							if (abs(map_matrix[x + (x_it - cap_iterator_width / 2)][y + (y_it - cap_iterator_height / 2)] * 1.0f - cap_iterator[x_it][y_it]) > .75f ) is_match = false;
@@ -115,6 +113,7 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 				if (is_match) 
 				{
 					bool has_hit_another_barrier = false;
+					/* Controlling which direction to extend in */
 					switch (rotations) {
 						case 0:
 						for (int extender = 1; extender < 500 && has_hit_another_barrier == false; extender++) {
@@ -148,8 +147,8 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 							}
 						}
 						break;
-
 					}
+					/* Filling in extra points around Iterator... */
 					for (int x_it = 0; x_it < cap_iterator_width && is_match; x_it++) {
 						for (int y_it = 0; y_it < cap_iterator_height && is_match; y_it++) {		
 							if (cap_iterator[x_it][y_it] < 1) map_matrix[x + (x_it - cap_iterator_width / 2)][y + (y_it - cap_iterator_height / 2)] = false;
@@ -158,6 +157,7 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 				}
 			}	
 		}
+		/* Rotating Iterator 90 degrees */
 		cap_iterator = rotateIterator(cap_iterator, cap_iterator_width, cap_iterator_height);
 		int temp = cap_iterator_height;
 		cap_iterator_height = cap_iterator_width;
@@ -170,10 +170,10 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 	/* Writing preprocessed map to view in GNUPlot */
 	plotMatrix();
 	
-
 	/* Map Preprocessing Done! */
 	cout << "PREPROCESSING FINISHED, FINDING POINTS OF INTEREST\n\n\n";
 
+	/* Flooding predefined rooms to find their centers */
 	for (int x = map_x_min; x < map_x_max; x++) {
 		for (int y = map_y_min; y < map_y_max; y++) {
 			if (map_matrix[x][y] == true) {
@@ -182,14 +182,16 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 				flood_data.count = 0;
 				floodArea(x, y);
 
-				cout << "CENTER AT POINT(" << flood_data.x_total/flood_data.count << ", " << flood_data.y_total/flood_data.count << ")\n";
+				int x_index = flood_data.x_total/flood_data.count, y_index = flood_data.y_total/flood_data.count;
+				float x_world = (x_index-(width / 2.0)) * meters_per_pixel, y_world = (y_index - (height / 2.0)) * meters_per_pixel;
+				
+				cout << "CENTER AT POINT(" << x_world << ", " << y_world  << ")\n";
 
-				target_points.push_back(flood_data.x_total/flood_data.count);
-				target_points.push_back(flood_data.y_total/flood_data.count);
+				target_points.push_back(x_world);
+				target_points.push_back(y_world);
 			}
 		}
 	}
-
 
 	/* Visualizing Points of Interest */
 	// for (int i = 0; i < target_points.size(); i += 2) {
@@ -200,16 +202,12 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 	// 	map_matrix[(target_points[i])][(target_points[i+1])-1] = true;
 	// }
 
-
-
 	//make sure to garbage collect matrices here!
-
-
 }
 
-
 void boxFilter() {
-for (int num_passes = 0; num_passes < 1; num_passes++) {
+	/* If 5 or more neighbors of any pixel are a given value, set pixel to value */
+	for (int num_passes = 0; num_passes < 1; num_passes++) {
 		for (int x = map_x_min; x < map_x_max; x++) {
 			for (int y = map_y_min; y < map_y_max; y++) {
 				int num_available_space = 0;
@@ -229,6 +227,7 @@ for (int num_passes = 0; num_passes < 1; num_passes++) {
 }
 
 void plotMatrix() {
+	/* Writing to file */
 	ofstream myfile;
   myfile.open ("plot.txt");
   if (myfile.is_open())
@@ -239,12 +238,13 @@ void plotMatrix() {
 			}
 			myfile << "\n";
 		}
-	 }
-  else cout << "Unable to open file";
+	}
+  else cout << "UNABLE TO OPEN PLOT.TXT\n";
 	myfile.close();
 }
 
 float** rotateIterator(float** input, int w, int h) {
+	/* Rotating input matrix by 90 degrees */
 	float** output = new float*[h];
 	for (int i = 0; i < h; i++) output[i] = new float[w];
 
@@ -257,6 +257,7 @@ float** rotateIterator(float** input, int w, int h) {
 }
 
 void floodArea(int x, int y) {
+	/* Recursively flooding and filling valid spots */
 	if (map_matrix[x][y] == true) {
 		map_matrix[x][y] = false;
 		flood_data.x_total += x;
@@ -268,7 +269,6 @@ void floodArea(int x, int y) {
 		floodArea(x, y+1);
 		floodArea(x, y-1);
 	}
-
 }
 
 int main(int argc, char **argv)
@@ -279,9 +279,11 @@ int main(int argc, char **argv)
 
 	/* Subscribe to Map & Metadata */
 	ros::Subscriber subscribe_map = nh.subscribe("/map", 1000, &getMap);
+	
+	/* Requesting Map once */
+	while (has_been_preprocessed == false) {
+		ros::Duration(.01).sleep();	
 
-	ros::spin();
-
-	//...
-
+		ros::spinOnce();
+	}
 }

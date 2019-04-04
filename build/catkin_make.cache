@@ -1,2 +1,2 @@
-final:lab7
+final
 -DCATKIN_DEVEL_PREFIX=/home/mutilar/CSE180/devel -DCMAKE_INSTALL_PREFIX=/home/mutilar/CSE180/install -G Unix Makefiles
