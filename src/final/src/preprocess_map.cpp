@@ -24,6 +24,10 @@ int width, height;
 /* Boolean representation of Occupancy Grid */
 bool** map_matrix;
 
+/* Iterator to brute-force scan for end-caps of barriers*/
+float** cap_iterator;
+int cap_iterator_width, cap_iterator_height;
+
 /* Bounds for relevant map data [ignoring excessive padding on edges of map]*/
 int map_x_min, map_x_max, map_y_min, map_y_max;
 
@@ -70,14 +74,30 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 			}	
 		}
 	}
-	
-	/* Defining "end cap" detection iterator */
 
-	//	1 	1 	1 	1 	1 	1 	1 	1 	1 	1
-	//  1 	1 	1 	1 	1 	1 	1 	1 	1 	1
-	//  1 	? 	? 	? 	? 	? 	? 	? 	? 	1
-	//  1 	? 	? 	0 	0 	0 	0 	? 	? 	1
-	//  1 	? 	0 	0 	0 	0 	0 	0 	? 	1
+	/* Defining "end cap" detection iterator */
+	cap_iterator_height = 5;
+	cap_iterator_width = 10;
+	cap_iterator = new float*[cap_iterator_width];
+	for (int i = 0; i < cap_iterator_width; i++) cap_iterator[i] = new float[cap_iterator_height];
+
+	/*	1 	1 	1 	1 	1 	1 	1 	1 	1 	1 */
+	/*	1 	1 	1 	1 	1 	1 	1 	1 	1 	1 */
+	/*	1 	? 	? 	0 	0 	0 	0 	? 	? 	1 */
+	/*	1 	? 	? 	0 	0 	0 	0 	? 	? 	1 */
+	/*	1 	? 	0 	0 	0 	0 	0 	0 	? 	1 */
+		
+	for (int y = 0; y < cap_iterator_height; y++) {
+		for (int x = 0; x < cap_iterator_width; x++) {
+			if (y == 0 || y == 1 || x == 0 || x == cap_iterator_width - 1) cap_iterator[x][y] = 1;
+			else if ((x == 1 || x == cap_iterator_width - 2) && (y == 2 || y == 3 || y == 4)) cap_iterator[x][y] = .5;	
+			else if ((x == 2 || x == cap_iterator_width - 3) && (y == 2 || y == 3)) cap_iterator[x][y] = .5;	
+			else cap_iterator[x][y] = 0;
+			std::cout << cap_iterator[x][y] << " ";
+		}
+		std:cout<<"\n";
+	}
+
 
 	//Scan for a match with iterator
 
@@ -97,10 +117,10 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 		for (int x = map_x_min; x < map_x_max; x++) {
 			for (int y = map_y_min; y < map_y_max; y++) {
 				myfile << map_matrix[x][y] << " ";
-				std::cout << map_matrix[x][y] << " ";
+				//std::cout << map_matrix[x][y] << " ";
 			}
 			myfile << "\n";
-			std::cout << "\n";
+			//std::cout << "\n";
 		}
 	 }
   	else cout << "Unable to open file";
@@ -109,6 +129,13 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 	std::cout << meters_per_pixel << "\n";
 
 	std::cout << "TEST\n";
+
+
+
+	//make sure to garbage collect matrices here!
+
+
+
 }
 
 int main(int argc, char **argv)
