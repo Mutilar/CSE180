@@ -32,8 +32,8 @@ vector<float> target_points;
 void getPoints(const geometry_msgs::Vector3& point) {
 	std::cout << "RECEIVING POINT(" << point.x << ", " << point.y << ")\n";
 
-	target_points.push_back(point.x);
 	target_points.push_back(point.y);
+	target_points.push_back(point.x);
 
 	has_been_instructed = true;
 }
@@ -69,9 +69,11 @@ void setGoal() {
 
 	if (target_points.size() == 0) {
 		ros::shutdown();
+	}else {
+
+	setGoal();
 	}
 	//
-	setGoal();
 }
 
 int main(int argc, char **argv)
@@ -83,9 +85,9 @@ int main(int argc, char **argv)
 	ros::Subscriber subscribe_points = nh.subscribe("/target_points", 1000, &getPoints);
 
  	while (has_been_instructed == false) {
- 		ros::Duration(.01).sleep();	
+ 		ros::Duration(1).sleep();	
 
-		ros::spinOnce();
+		for (int i = 0; i < 10; i++) ros::spinOnce();
 	}
 	cout << "received instructions\n\n";
 
