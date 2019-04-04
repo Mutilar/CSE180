@@ -29,8 +29,6 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 	width = map.info.width;
 	height = map.info.height;
 
-	bool 
-
 
 
 	map_matrix = new bool*[height];
@@ -42,17 +40,25 @@ void getMap(const nav_msgs::OccupancyGrid &map)
 		std::cout << "READING POINT(" << i % width << ", " << i / width << ") = " << map.data[i]*1.0 << ";\n";		
 		map_matrix[i % width][i / width] = map.data[i] == 0;
 	} 
-	bool is_all_inaccessible = true;
-	for (map_y_min = 0; map_y_min < height && is_all_inaccessible == true; map_y_min++) {
-		for (int j = 0; j < width; j++) {
-			if (map.data[i, j] != -1) {
-				is_all_inaccessible = false;
-				break;
-			}
-		}
-	} 
-	cout << "test" << map_y_min << "\n";
-}
+
+	map_x_min = (width / 2) - (10 / meters_per_pixel);
+	map_x_max = (width / 2) + (10 / meters_per_pixel);
+
+	map_y_min = (height / 2) - (10 / meters_per_pixel);
+	map_y_max = (height / 2) + (10 / meters_per_pixel);
+
+
+	// bool is_all_inaccessible = true;
+	// for (map_y_min = 0; map_y_min < height && is_all_inaccessible == true; map_y_min++) {
+	// 	for (int j = 0; j < width; j++) {
+	// 		if (map.data[map_y_min + j * width] != -1) {
+	// 			is_all_inaccessible = false;
+	// 			break;
+	// 		}
+	// 	}
+	// } 
+	std::cout << "Bounding(" << map_y_min << "," << map_y_max << "\n";
+
 
 
 
