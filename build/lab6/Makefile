@@ -56,38 +56,15 @@ CMAKE_BINARY_DIR = /home/mutilar/CSE180/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -112,15 +89,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -132,6 +110,28 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,81 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-lab6/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: lab6/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf_generate_messages_cpp.dir/build.make lab6/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: lab6/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_generate_messages_eus.dir/build.make lab6/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 lab6/CMakeFiles/navigate.dir/rule:
 	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/navigate.dir/rule
 .PHONY : lab6/CMakeFiles/navigate.dir/rule
@@ -254,606 +179,6 @@ navigate: lab6/CMakeFiles/navigate.dir/rule
 navigate/fast:
 	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/navigate.dir/build.make lab6/CMakeFiles/navigate.dir/build
 .PHONY : navigate/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make lab6/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_eus: lab6/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf_generate_messages_eus.dir/build.make lab6/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: lab6/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/roscpp_generate_messages_eus.dir/build.make lab6/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make lab6/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: lab6/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/std_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: lab6/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf_generate_messages_lisp.dir/build.make lab6/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: lab6/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/roscpp_generate_messages_py.dir/build.make lab6/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: lab6/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: lab6/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf_generate_messages_py.dir/build.make lab6/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make lab6/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make lab6/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: lab6/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_generate_messages_py.dir/build.make lab6/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make lab6/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make lab6/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make lab6/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make lab6/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make lab6/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
 
 src/navigate.o: src/navigate.cpp.o
 
@@ -888,59 +213,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... install"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... navigate"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... rebuild_cache"
-	@echo "... tf_generate_messages_eus"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... list_install_components"
-	@echo "... roscpp_generate_messages_eus"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... navigate"
 	@echo "... test"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... tf_generate_messages_nodejs"
-	@echo "... tf_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... src/navigate.o"
 	@echo "... src/navigate.i"
 	@echo "... src/navigate.s"
