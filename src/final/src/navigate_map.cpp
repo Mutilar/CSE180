@@ -26,10 +26,8 @@ move_base_msgs::MoveBaseGoal goal;
 /* Sets of two, target x, target y for robot to move towards (output of node) */
 vector<float> target_points;
 
-
-
-
-void getPoints(const geometry_msgs::Vector3& point) {
+void getPoints(const geometry_msgs::Vector3 &point)
+{
 	std::cout << "RECEIVING POINT(" << point.x << ", " << point.y << ")\n";
 
 	target_points.push_back(point.y);
@@ -38,27 +36,25 @@ void getPoints(const geometry_msgs::Vector3& point) {
 	has_been_instructed = true;
 }
 
-void setGoal() {
+void setGoal()
+{
 
 	// ROS_INFO_STREAM("TARGET(" << target_x << ", " << target_y << ")");
-    actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base");
-	
-    cout << "waiting for server...\n";
+	actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base");
 
-	while (!ac.waitForServer()) { }
-
+	cout << "waiting for server...\n";
+	while (!ac.waitForServer())	{ }
 	cout << "found server...\n";
-	
+
 	goal.target_pose.header.frame_id = "map";
 	goal.target_pose.header.stamp = ros::Time::now();
-	
+
 	cout << "TARGET( y = " << target_points.back() << ", ";
-	goal.target_pose.pose.position.y = target_points.back(); 
+	goal.target_pose.pose.position.y = target_points.back();
 	target_points.pop_back();
 	cout << "x = " << target_points.back() << ")\n";
 	goal.target_pose.pose.position.x = target_points.back();
 	target_points.pop_back();
-
 
 	goal.target_pose.pose.orientation.w = 1.0;
 
@@ -67,12 +63,14 @@ void setGoal() {
 
 	std::cout << target_points.size() << "\n";
 
-	if (target_points.size() == 0) {
-		//Run PostProcessor	
+	if (target_points.size() == 0)
+	{
+		//Run PostProcessor
 		ros::shutdown();
-	}else {
-
-	setGoal();
+	}
+	else
+	{
+		setGoal();
 	}
 }
 
@@ -84,16 +82,22 @@ int main(int argc, char **argv)
 
 	ros::Subscriber subscribe_points = nh.subscribe("/target_points", 1000, &getPoints);
 	int spin_more = 0;
- 	while (spin_more < 10) {
- 		ros::Duration(1).sleep();	
 
-		for (int i = 0; i < 10; i++) ros::spinOnce();
-		
-		if (has_been_instructed) spin_more++; 
+	//Run Preprocessor
+
+	while (spin_more < 10)
+	{
+		ros::Duration(1).sleep();
+
+		for (int i = 0; i < 10; i++)
+			ros::spinOnce();
+
+		if (has_been_instructed)
+			spin_more++;
 	}
 	cout << "received instructions\n\n";
 
-	ros::Duration(1).sleep();	
+	ros::Duration(1).sleep();
 
 	setGoal();
 	ros::spin();
