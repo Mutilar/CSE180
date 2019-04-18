@@ -68,12 +68,12 @@ void setGoal() {
 	std::cout << target_points.size() << "\n";
 
 	if (target_points.size() == 0) {
+		//Run PostProcessor	
 		ros::shutdown();
 	}else {
 
 	setGoal();
 	}
-	//
 }
 
 int main(int argc, char **argv)
@@ -83,11 +83,13 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 
 	ros::Subscriber subscribe_points = nh.subscribe("/target_points", 1000, &getPoints);
-
- 	while (has_been_instructed == false) {
+	int spin_more = 0;
+ 	while (spin_more < 10) {
  		ros::Duration(1).sleep();	
 
 		for (int i = 0; i < 10; i++) ros::spinOnce();
+		
+		if (has_been_instructed) spin_more++; 
 	}
 	cout << "received instructions\n\n";
 
