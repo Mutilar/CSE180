@@ -10,6 +10,7 @@
 #include <tf2_msgs/TFMessage.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/Twist.h>
+#include <std_msgs/Bool.h>
 
 #include <actionlib/client/simple_action_client.h>
 #include <move_base_msgs/MoveBaseAction.h>
@@ -42,6 +43,10 @@ void setGoal()
 	// ROS_INFO_STREAM("TARGET(" << target_x << ", " << target_y << ")");
 	actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base");
 
+	ros::NodeHandle nh;
+	ros::Publisher pubBool = 
+		nh.advertise<std_msgs::Bool>("/navigate_finished",1000);
+
 	cout << "waiting for server...\n";
 	while (!ac.waitForServer())	{ }
 	cout << "found server...\n";
@@ -66,10 +71,18 @@ void setGoal()
 	if (target_points.size() == 0)
 	{
 		//Run PostProcessor
+		std_msgs::Bool targetReached;			//Last Target Reached
+		targetReached.data = true;				//Publish TRUE to pubBool Topic so that next traget point is added
+		pubBool.publish(targetReached);	
+
 		ros::shutdown();
 	}
 	else
 	{
+		std_msgs::Bool targetReached;			//Last Target Reached
+		targetReached.data = false;				//Publish TRUE to pubBool Topic so that next traget point is added
+		pubBool.publish(targetReached);
+
 		setGoal();
 	}
 }
