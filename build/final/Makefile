@@ -436,21 +436,6 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-final/CMakeFiles/scan_map.dir/rule:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 final/CMakeFiles/scan_map.dir/rule
-.PHONY : final/CMakeFiles/scan_map.dir/rule
-
-# Convenience name for target.
-scan_map: final/CMakeFiles/scan_map.dir/rule
-
-.PHONY : scan_map
-
-# fast build rule for target.
-scan_map/fast:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/build
-.PHONY : scan_map/fast
-
-# Convenience name for target.
 final/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
 	cd /home/mutilar/CSE180/build && $(MAKE) -f CMakeFiles/Makefile2 final/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : final/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
@@ -981,33 +966,6 @@ src/preprocess_map.cpp.s:
 	cd /home/mutilar/CSE180/build && $(MAKE) -f final/CMakeFiles/preprocess_map.dir/build.make final/CMakeFiles/preprocess_map.dir/src/preprocess_map.cpp.s
 .PHONY : src/preprocess_map.cpp.s
 
-src/scan_map.o: src/scan_map.cpp.o
-
-.PHONY : src/scan_map.o
-
-# target to build an object file
-src/scan_map.cpp.o:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/src/scan_map.cpp.o
-.PHONY : src/scan_map.cpp.o
-
-src/scan_map.i: src/scan_map.cpp.i
-
-.PHONY : src/scan_map.i
-
-# target to preprocess a source file
-src/scan_map.cpp.i:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/src/scan_map.cpp.i
-.PHONY : src/scan_map.cpp.i
-
-src/scan_map.s: src/scan_map.cpp.s
-
-.PHONY : src/scan_map.s
-
-# target to generate assembly for a file
-src/scan_map.cpp.s:
-	cd /home/mutilar/CSE180/build && $(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/src/scan_map.cpp.s
-.PHONY : src/scan_map.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1036,7 +994,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... scan_map"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... postprocess_map"
 	@echo "... tf_generate_messages_eus"
@@ -1079,9 +1036,6 @@ help:
 	@echo "... src/preprocess_map.o"
 	@echo "... src/preprocess_map.i"
 	@echo "... src/preprocess_map.s"
-	@echo "... src/scan_map.o"
-	@echo "... src/scan_map.i"
-	@echo "... src/scan_map.s"
 .PHONY : help
 
 

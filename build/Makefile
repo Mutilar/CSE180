@@ -517,19 +517,6 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named scan_map
-
-# Build rule for target.
-scan_map: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 scan_map
-.PHONY : scan_map
-
-# fast build rule for target.
-scan_map/fast:
-	$(MAKE) -f final/CMakeFiles/scan_map.dir/build.make final/CMakeFiles/scan_map.dir/build
-.PHONY : scan_map/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -919,6 +906,32 @@ actionlib_generate_messages_py/fast:
 	$(MAKE) -f final/CMakeFiles/actionlib_generate_messages_py.dir/build.make final/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named move
+
+# Build rule for target.
+move: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move
+.PHONY : move
+
+# fast build rule for target.
+move/fast:
+	$(MAKE) -f lab8/CMakeFiles/move.dir/build.make lab8/CMakeFiles/move.dir/build
+.PHONY : move/fast
+
+#=============================================================================
+# Target rules for targets named averagepose
+
+# Build rule for target.
+averagepose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 averagepose
+.PHONY : averagepose
+
+# fast build rule for target.
+averagepose/fast:
+	$(MAKE) -f lab8/CMakeFiles/averagepose.dir/build.make lab8/CMakeFiles/averagepose.dir/build
+.PHONY : averagepose/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -959,7 +972,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... scan_map"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... postprocess_map"
 	@echo "... tf_generate_messages_eus"
@@ -990,6 +1002,8 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
+	@echo "... move"
+	@echo "... averagepose"
 .PHONY : help
 
 

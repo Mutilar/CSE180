@@ -15,9 +15,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "final/catkin_generated/ordered_paths.cmake"
   "final/catkin_generated/package.cmake"
+  "lab8/catkin_generated/ordered_paths.cmake"
+  "lab8/catkin_generated/package.cmake"
   "/home/mutilar/CSE180/src/CMakeLists.txt"
   "/home/mutilar/CSE180/src/final/CMakeLists.txt"
   "/home/mutilar/CSE180/src/final/package.xml"
+  "/home/mutilar/CSE180/src/lab8/CMakeLists.txt"
+  "/home/mutilar/CSE180/src/lab8/package.xml"
   "/opt/ros/kinetic/share/actionlib/cmake/actionlib-msg-extras.cmake"
   "/opt/ros/kinetic/share/actionlib/cmake/actionlibConfig-version.cmake"
   "/opt/ros/kinetic/share/actionlib/cmake/actionlibConfig.cmake"
@@ -205,6 +209,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "final/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lab8/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -236,7 +241,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "final/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "final/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "final/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
-  "final/CMakeFiles/scan_map.dir/DependInfo.cmake"
   "final/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "final/CMakeFiles/postprocess_map.dir/DependInfo.cmake"
   "final/CMakeFiles/tf_generate_messages_eus.dir/DependInfo.cmake"
@@ -267,4 +271,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "final/CMakeFiles/actionlib_generate_messages_lisp.dir/DependInfo.cmake"
   "final/CMakeFiles/actionlib_generate_messages_nodejs.dir/DependInfo.cmake"
   "final/CMakeFiles/actionlib_generate_messages_py.dir/DependInfo.cmake"
+  "lab8/CMakeFiles/move.dir/DependInfo.cmake"
+  "lab8/CMakeFiles/averagepose.dir/DependInfo.cmake"
   )
