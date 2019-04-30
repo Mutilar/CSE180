@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LMS1xx.dir/src/LMS1xx.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/libLMS1xx.pdb"
-  "/home/mutilar/CSE180/devel/lib/libLMS1xx.so"
+  "/home/dv/RoboticsFinal/devel/lib/libLMS1xx.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/libLMS1xx.so"
 )
 
 # Per-language clean rules from dependency scanning.

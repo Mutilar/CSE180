@@ -1,8 +1,8 @@
-# Install script for directory: /home/mutilar/CSE180/src/husky/husky_description
+# Install script for directory: /home/dv/RoboticsFinal/src/husky/husky_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mutilar/CSE180/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dv/RoboticsFinal/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,25 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mutilar/CSE180/build/husky/husky_description/catkin_generated/installspace/husky_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dv/RoboticsFinal/build/husky/husky_description/catkin_generated/installspace/husky_description.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_description/cmake" TYPE FILE FILES
-    "/home/mutilar/CSE180/build/husky/husky_description/catkin_generated/installspace/husky_descriptionConfig.cmake"
-    "/home/mutilar/CSE180/build/husky/husky_description/catkin_generated/installspace/husky_descriptionConfig-version.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_description/catkin_generated/installspace/husky_descriptionConfig.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_description/catkin_generated/installspace/husky_descriptionConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_description" TYPE FILE FILES "/home/mutilar/CSE180/src/husky/husky_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_description" TYPE FILE FILES "/home/dv/RoboticsFinal/src/husky/husky_description/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_description" TYPE DIRECTORY FILES
-    "/home/mutilar/CSE180/src/husky/husky_description/launch"
-    "/home/mutilar/CSE180/src/husky/husky_description/meshes"
-    "/home/mutilar/CSE180/src/husky/husky_description/urdf"
+    "/home/dv/RoboticsFinal/src/husky/husky_description/launch"
+    "/home/dv/RoboticsFinal/src/husky/husky_description/meshes"
+    "/home/dv/RoboticsFinal/src/husky/husky_description/urdf"
     )
 endif()
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/mutilar/CSE180/src/husky/husky_simulator
+# Install script for directory: /home/dv/RoboticsFinal/src/husky/husky_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mutilar/CSE180/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dv/RoboticsFinal/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_simulator" TYPE FILE FILES "/home/mutilar/CSE180/src/husky/husky_simulator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_simulator" TYPE FILE FILES "/home/dv/RoboticsFinal/src/husky/husky_simulator/package.xml")
 endif()
 

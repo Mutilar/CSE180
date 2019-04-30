@@ -1,8 +1,8 @@
-prefix=/home/mutilar/CSE180/devel
+prefix=/home/dv/RoboticsFinal/devel
 
 Name: husky_gazebo
 Description: Description of husky_gazebo
 Version: 0.3.1
 Cflags: 
-Libs: -L/home/mutilar/CSE180/devel/lib 
+Libs: -L/home/dv/RoboticsFinal/devel/lib 
 Requires: 

@@ -1,8 +1,8 @@
-prefix=/home/mutilar/CSE180/install
+prefix=/home/dv/RoboticsFinal/install
 
 Name: lms1xx
 Description: Description of lms1xx
 Version: 0.1.6
 Cflags: 
-Libs: -L/home/mutilar/CSE180/install/lib 
+Libs: -L/home/dv/RoboticsFinal/install/lib 
 Requires: roscpp

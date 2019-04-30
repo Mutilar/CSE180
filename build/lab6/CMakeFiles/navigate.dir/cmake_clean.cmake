@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/navigate.dir/src/navigate.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/lab6/navigate.pdb"
-  "/home/mutilar/CSE180/devel/lib/lab6/navigate"
+  "/home/dv/RoboticsFinal/devel/lib/lab6/navigate.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/lab6/navigate"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/moverobot.dir/src/moverobot.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/lab1/moverobot.pdb"
-  "/home/mutilar/CSE180/devel/lib/lab1/moverobot"
+  "/home/dv/RoboticsFinal/devel/lib/lab1/moverobot.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/lab1/moverobot"
 )
 
 # Per-language clean rules from dependency scanning.

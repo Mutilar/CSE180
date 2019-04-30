@@ -1,2 +1,2 @@
-final:lab8
--DCATKIN_DEVEL_PREFIX=/home/mutilar/CSE180/devel -DCMAKE_INSTALL_PREFIX=/home/mutilar/CSE180/install -G Unix Makefiles
+final
+-DCATKIN_DEVEL_PREFIX=/home/dv/RoboticsFinal/devel -DCMAKE_INSTALL_PREFIX=/home/dv/RoboticsFinal/install -G Unix Makefiles

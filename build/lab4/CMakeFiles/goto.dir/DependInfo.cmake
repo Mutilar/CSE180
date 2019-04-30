@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mutilar/CSE180/src/lab4/src/goto.cpp" "/home/mutilar/CSE180/build/lab4/CMakeFiles/goto.dir/src/goto.cpp.o"
+  "/home/dv/RoboticsFinal/src/lab4/src/goto.cpp" "/home/dv/RoboticsFinal/build/lab4/CMakeFiles/goto.dir/src/goto.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/mutilar/CSE180/src/lab4/include"
+  "/home/dv/RoboticsFinal/src/lab4/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

@@ -1,8 +1,8 @@
-prefix=/home/mutilar/CSE180/devel
+prefix=/home/dv/RoboticsFinal/devel
 
 Name: lab4
 Description: Description of lab4
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/mutilar/CSE180/devel/lib 
+Libs: -L/home/dv/RoboticsFinal/devel/lib 
 Requires: 

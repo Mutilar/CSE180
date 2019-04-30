@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tour.dir/src/tour.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/lab5/tour.pdb"
-  "/home/mutilar/CSE180/devel/lib/lab5/tour"
+  "/home/dv/RoboticsFinal/devel/lib/lab5/tour.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/lab5/tour"
 )
 
 # Per-language clean rules from dependency scanning.

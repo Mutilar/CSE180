@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cleanarea.dir/src/cleanarea.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/lab7/cleanarea.pdb"
-  "/home/mutilar/CSE180/devel/lib/lab7/cleanarea"
+  "/home/dv/RoboticsFinal/devel/lib/lab7/cleanarea.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/lab7/cleanarea"
 )
 
 # Per-language clean rules from dependency scanning.

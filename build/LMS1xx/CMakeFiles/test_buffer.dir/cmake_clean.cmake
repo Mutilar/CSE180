@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test_buffer.dir/test/test_buffer.cpp.o"
-  "/home/mutilar/CSE180/devel/lib/lms1xx/test_buffer.pdb"
-  "/home/mutilar/CSE180/devel/lib/lms1xx/test_buffer"
+  "/home/dv/RoboticsFinal/devel/lib/lms1xx/test_buffer.pdb"
+  "/home/dv/RoboticsFinal/devel/lib/lms1xx/test_buffer"
 )
 
 # Per-language clean rules from dependency scanning.

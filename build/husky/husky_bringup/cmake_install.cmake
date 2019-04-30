@@ -1,8 +1,8 @@
-# Install script for directory: /home/mutilar/CSE180/src/husky/husky_bringup
+# Install script for directory: /home/dv/RoboticsFinal/src/husky/husky_bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mutilar/CSE180/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dv/RoboticsFinal/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,37 +33,37 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mutilar/CSE180/build/husky/husky_bringup/catkin_generated/installspace/husky_bringup.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dv/RoboticsFinal/build/husky/husky_bringup/catkin_generated/installspace/husky_bringup.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_bringup/cmake" TYPE FILE FILES
-    "/home/mutilar/CSE180/build/husky/husky_bringup/catkin_generated/installspace/husky_bringupConfig.cmake"
-    "/home/mutilar/CSE180/build/husky/husky_bringup/catkin_generated/installspace/husky_bringupConfig-version.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_bringup/catkin_generated/installspace/husky_bringupConfig.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_bringup/catkin_generated/installspace/husky_bringupConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_bringup" TYPE FILE FILES "/home/mutilar/CSE180/src/husky/husky_bringup/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_bringup" TYPE FILE FILES "/home/dv/RoboticsFinal/src/husky/husky_bringup/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/home/mutilar/CSE180/src/husky/husky_bringup/env-hooks/50.husky_find_mag_config.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/home/dv/RoboticsFinal/src/husky/husky_bringup/env-hooks/50.husky_find_mag_config.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/husky_bringup" TYPE PROGRAM FILES
-    "/home/mutilar/CSE180/src/husky/husky_bringup/scripts/install"
-    "/home/mutilar/CSE180/src/husky/husky_bringup/scripts/calibrate_compass"
-    "/home/mutilar/CSE180/src/husky/husky_bringup/scripts/compute_calibration"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/scripts/install"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/scripts/calibrate_compass"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/scripts/compute_calibration"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_bringup" TYPE DIRECTORY FILES
-    "/home/mutilar/CSE180/src/husky/husky_bringup/launch"
-    "/home/mutilar/CSE180/src/husky/husky_bringup/udev"
-    "/home/mutilar/CSE180/src/husky/husky_bringup/config"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/launch"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/udev"
+    "/home/dv/RoboticsFinal/src/husky/husky_bringup/config"
     )
 endif()
 

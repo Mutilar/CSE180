@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/husky_msgs_generate_messages_lisp"
-  "/home/mutilar/CSE180/devel/share/common-lisp/ros/husky_msgs/msg/HuskyStatus.lisp"
+  "/home/dv/RoboticsFinal/devel/share/common-lisp/ros/husky_msgs/msg/HuskyStatus.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mutilar/CSE180/src/lab5/src/tour.cpp" "/home/mutilar/CSE180/build/lab5/CMakeFiles/tour.dir/src/tour.cpp.o"
+  "/home/dv/RoboticsFinal/src/lab5/src/tour.cpp" "/home/dv/RoboticsFinal/build/lab5/CMakeFiles/tour.dir/src/tour.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/mutilar/CSE180/src/lab5/include"
+  "/home/dv/RoboticsFinal/src/lab5/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

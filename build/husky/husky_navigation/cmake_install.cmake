@@ -1,8 +1,8 @@
-# Install script for directory: /home/mutilar/CSE180/src/husky/husky_navigation
+# Install script for directory: /home/dv/RoboticsFinal/src/husky/husky_navigation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mutilar/CSE180/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dv/RoboticsFinal/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,25 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mutilar/CSE180/build/husky/husky_navigation/catkin_generated/installspace/husky_navigation.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dv/RoboticsFinal/build/husky/husky_navigation/catkin_generated/installspace/husky_navigation.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_navigation/cmake" TYPE FILE FILES
-    "/home/mutilar/CSE180/build/husky/husky_navigation/catkin_generated/installspace/husky_navigationConfig.cmake"
-    "/home/mutilar/CSE180/build/husky/husky_navigation/catkin_generated/installspace/husky_navigationConfig-version.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_navigation/catkin_generated/installspace/husky_navigationConfig.cmake"
+    "/home/dv/RoboticsFinal/build/husky/husky_navigation/catkin_generated/installspace/husky_navigationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_navigation" TYPE FILE FILES "/home/mutilar/CSE180/src/husky/husky_navigation/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_navigation" TYPE FILE FILES "/home/dv/RoboticsFinal/src/husky/husky_navigation/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/husky_navigation" TYPE DIRECTORY FILES
-    "/home/mutilar/CSE180/src/husky/husky_navigation/config"
-    "/home/mutilar/CSE180/src/husky/husky_navigation/launch"
-    "/home/mutilar/CSE180/src/husky/husky_navigation/maps"
+    "/home/dv/RoboticsFinal/src/husky/husky_navigation/config"
+    "/home/dv/RoboticsFinal/src/husky/husky_navigation/launch"
+    "/home/dv/RoboticsFinal/src/husky/husky_navigation/maps"
     )
 endif()
 

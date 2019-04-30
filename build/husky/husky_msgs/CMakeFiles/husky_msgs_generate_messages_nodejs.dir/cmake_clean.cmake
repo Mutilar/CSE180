@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/husky_msgs_generate_messages_nodejs"
-  "/home/mutilar/CSE180/devel/share/gennodejs/ros/husky_msgs/msg/HuskyStatus.js"
+  "/home/dv/RoboticsFinal/devel/share/gennodejs/ros/husky_msgs/msg/HuskyStatus.js"
 )
 
 # Per-language clean rules from dependency scanning.

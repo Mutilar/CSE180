@@ -1,8 +1,8 @@
-# Install script for directory: /home/mutilar/CSE180/src/lab2
+# Install script for directory: /home/dv/RoboticsFinal/src/lab2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mutilar/CSE180/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dv/RoboticsFinal/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mutilar/CSE180/build/lab2/catkin_generated/installspace/lab2.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dv/RoboticsFinal/build/lab2/catkin_generated/installspace/lab2.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab2/cmake" TYPE FILE FILES
-    "/home/mutilar/CSE180/build/lab2/catkin_generated/installspace/lab2Config.cmake"
-    "/home/mutilar/CSE180/build/lab2/catkin_generated/installspace/lab2Config-version.cmake"
+    "/home/dv/RoboticsFinal/build/lab2/catkin_generated/installspace/lab2Config.cmake"
+    "/home/dv/RoboticsFinal/build/lab2/catkin_generated/installspace/lab2Config-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab2" TYPE FILE FILES "/home/mutilar/CSE180/src/lab2/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab2" TYPE FILE FILES "/home/dv/RoboticsFinal/src/lab2/package.xml")
 endif()
 
