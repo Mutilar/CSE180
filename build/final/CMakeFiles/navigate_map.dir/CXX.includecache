@@ -23,6 +23,8 @@ geometry_msgs/TransformStamped.h
 -
 geometry_msgs/Twist.h
 -
+std_msgs/Bool.h
+-
 actionlib/client/simple_action_client.h
 -
 move_base_msgs/MoveBaseAction.h
@@ -1466,6 +1468,22 @@ std_msgs/Header.h
 geometry_msgs/Point32.h
 -
 sensor_msgs/ChannelFloat32.h
+-
+
+/opt/ros/kinetic/include/std_msgs/Bool.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/std_msgs/Empty.h

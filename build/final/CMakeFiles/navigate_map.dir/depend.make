@@ -108,6 +108,7 @@ final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/inclu
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/sensor_msgs/ChannelFloat32.h
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/sensor_msgs/PointCloud.h
+final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 final/CMakeFiles/navigate_map.dir/src/navigate_map.cpp.o: /opt/ros/kinetic/include/tf/FrameGraph.h
