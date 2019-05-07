@@ -420,7 +420,7 @@ float **rotateIterator(float **input, int w, int h)
 int main(int argc, char **argv)
 {
 	/* Init Garbage */
-	ros::init(argc, argv, "preprocess");
+	ros::init(argc, argv, "postprocess");
 	ros::NodeHandle nh;
 
 	/* Subscribe to Map & Metadata */

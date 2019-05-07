@@ -906,32 +906,6 @@ actionlib_generate_messages_py/fast:
 	$(MAKE) -f final/CMakeFiles/actionlib_generate_messages_py.dir/build.make final/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named move
-
-# Build rule for target.
-move: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 move
-.PHONY : move
-
-# fast build rule for target.
-move/fast:
-	$(MAKE) -f lab8/CMakeFiles/move.dir/build.make lab8/CMakeFiles/move.dir/build
-.PHONY : move/fast
-
-#=============================================================================
-# Target rules for targets named averagepose
-
-# Build rule for target.
-averagepose: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 averagepose
-.PHONY : averagepose
-
-# fast build rule for target.
-averagepose/fast:
-	$(MAKE) -f lab8/CMakeFiles/averagepose.dir/build.make lab8/CMakeFiles/averagepose.dir/build
-.PHONY : averagepose/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1002,8 +976,6 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
-	@echo "... move"
-	@echo "... averagepose"
 .PHONY : help
 
 

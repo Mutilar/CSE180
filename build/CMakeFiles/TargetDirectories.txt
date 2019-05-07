@@ -83,12 +83,3 @@
 /home/mutilar/CSE180/build/final/CMakeFiles/test.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/actionlib_generate_messages_nodejs.dir
 /home/mutilar/CSE180/build/final/CMakeFiles/actionlib_generate_messages_py.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/rebuild_cache.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/install.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/move.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/averagepose.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/install/strip.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/edit_cache.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/list_install_components.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/install/local.dir
-/home/mutilar/CSE180/build/lab8/CMakeFiles/test.dir
