@@ -7,6 +7,7 @@
 #include <geometry_msgs/Vector3.h>
 #include <nav_msgs/OccupancyGrid.h>
 #include <nav_msgs/MapMetaData.h>
+#include <std_msgs/Bool.h>
 #include <iostream>
 #include <fstream>
 
@@ -15,6 +16,8 @@ using namespace std;
 /* Stop Spinning on receiving of map */
 bool map_has_been_received = false;
 bool new_map_has_been_received = false;
+
+bool goal_reached = false;
 
 /* Map Metadata Constants */
 float meters_per_pixel;
@@ -417,15 +420,36 @@ float **rotateIterator(float **input, int w, int h)
 	return output;
 }
 
+void targetReachedMSG(const std_msgs::Bool&msg) {
+	goal_reached = msg.data;
+
+	std::cout << goal_reached << std::endl;
+
+	if(goal_reached == true) {
+		std::cout << "Last Goal Point Reached" << std::endl;
+	}
+
+
+}
+
 int main(int argc, char **argv)
 {
 	/* Init Garbage */
-	ros::init(argc, argv, "postprocess");
+	ros::init(argc, argv, "postprocess_map");
 	ros::NodeHandle nh;
 
 	/* Subscribe to Map & Metadata */
 	ros::Subscriber subscribe_map = nh.subscribe("/map", 1000, &getMap);
 	ros::Subscriber subscribe_map_new = nh.subscribe("/myMap", 1000, &getNewMap);
+
+	ros::Subscriber targetsReached = 
+		nh.subscribe("/navigate_finished",1000,&targetReachedMSG);
+
+
+	while(goal_reached != true) {
+		ros::spinOnce();
+	}
+	
 
 	/* Requesting Map once */
 	while (new_map_has_been_received == false || new_map_has_been_received == false)
@@ -440,4 +464,5 @@ int main(int argc, char **argv)
 	//........
 
 	postProcess();
+	
 }

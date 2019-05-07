@@ -1,5 +1,5 @@
 <launch>
-  <node name="gmapping" pkg="gmapping" type="slam_gmapping" output="screen">
+  <node name="gmapping" pkg="gmapping" type="slam_gmapping">
     <remap from="scan" to ="scan"/>
     <remap from="map" to ="myMap"/>
   </node>
@@ -7,6 +7,8 @@
   <node name="navigate_map" pkg="final" type="navigate_map" output="screen"/>
 
   <node name="preprocess_map" pkg="final" type="preprocess_map" output="screen"/>
+
+  <node name="postprocess_map" pkg="final" type="postprocess_map" output="screen"/>
 
 
 </launch>
