@@ -438,9 +438,6 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "postprocess_map");
 	ros::NodeHandle nh;
 
-	/* Subscribe to Map & Metadata */
-	ros::Subscriber subscribe_map = nh.subscribe("/map", 1000, &getMap);
-	ros::Subscriber subscribe_map_new = nh.subscribe("/myMap", 1000, &getNewMap);
 
 	ros::Subscriber targetsReached = 
 		nh.subscribe("/navigate_finished",1000,&targetReachedMSG);
@@ -450,6 +447,10 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 	}
 	
+
+	/* Subscribe to Map & Metadata */
+	ros::Subscriber subscribe_map = nh.subscribe("/map", 1000, &getMap);
+	ros::Subscriber subscribe_map_new = nh.subscribe("/myMap", 1000, &getNewMap);
 
 	/* Requesting Map once */
 	while (new_map_has_been_received == false || new_map_has_been_received == false)
