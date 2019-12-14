@@ -1,1 +1,1 @@
-# Coursework for CSE180: Intro to Robotics
+# Coursework for CSE180: Robotics
